@@ -6,34 +6,33 @@ class Solution(object):
         :rtype: int
         """
         small = float('inf')
-        temp = float('inf')
         
         for i in nums1:
             for j in nums2:
                 
                 if i==j:
-                    temp=i
-                    if temp<small:
-                        small=temp
-                    continue
+                    if i<small:
+                        small=i
+                        continue
                 
-                s = i*10+j
-                if s<temp:
-                    temp=s
-                    small=temp
-                    
+                temp = i*10+j
+                if temp<small:
+                    small = temp
+        
         for i in nums2:
-            for j in nums1:                
-                if i==j:
-                    temp=i
-                    if temp<small:
-                        small=temp
-                    continue
+            for j in nums1:
                 
-                s = i*10+j
-                if s<temp:
-                    temp=s
-                    small=temp           
+                if i==j:
+                    if i<small:
+                        small=i
+                        continue
+                
+                temp = i*10+j
+                if temp<small:
+                    small = temp
+                   
+                    
+                  
              
         
         return small
