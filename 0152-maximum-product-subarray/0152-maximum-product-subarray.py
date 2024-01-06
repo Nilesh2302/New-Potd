@@ -11,6 +11,6 @@ class Solution(object):
                 arr[i] *= arr[i-1] 
             
             if B[i-1]!=0:
-                B[i] *= B[i-1] or 1
+                B[i] *= B[i-1]
             
         return max(arr+B) 
