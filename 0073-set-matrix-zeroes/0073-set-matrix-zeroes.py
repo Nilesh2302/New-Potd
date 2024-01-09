@@ -1,33 +1,26 @@
 class Solution(object):
     def setZeroes(self, arr):
+        """
+        :type matrix: List[List[int]]
+        :rtype: None Do not return anything, modify matrix in-place instead.
+        """
+        n = len(arr)
+        m = len(arr[0])
         
-        #t.c : O(mn) and s.c. is O(m+n)
-        
-        m = len(arr)
-        n = len(arr[0])
-        
-        r = set()
-        c = set()
-        
-        for i in range(m):
-            for j in range(n):
+        s1 = set()
+        s2 = set()
+        for i in range(n):
+            for j in range(m):
                 if arr[i][j]==0:
-                    r.add(i)
-                    c.add(j)
+                    s1.add(i)
+                    s2.add(j)
         
-        #make row with 0
-        for i in r:
-            for j in range(n):
+        for i in s1:
+            for j in range(m):
                 arr[i][j]=0
         
-        #make column with 0
-        for i in range(m):
-            for j in c:
+        
+        for i in range(n):
+            for j in s2:
                 arr[i][j]=0
-        
-        return arr
-        
-
-
-          
-                        
+                
