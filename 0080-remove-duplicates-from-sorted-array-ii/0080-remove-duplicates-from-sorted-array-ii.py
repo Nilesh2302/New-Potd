@@ -1,17 +1,17 @@
 class Solution(object):
-    def removeDuplicates(self, arr):
-        count = {}
+    def removeDuplicates(self,arr):
+        d = dict({})
         ans = []
-        
-        for num in arr:
-            if num in count:
-                count[num] += 1
+        for i in arr:
+            if i in d:
+                d[i] += 1
+            
             else:
-                count[num] = 1
-            # Add the number only if it appears the first or second time
-            if count[num] <= 2:
-                ans.append(num)
+                d[i] = 1
+            
+            if d[i]<=2:
+                ans.append(i)
+        
         
         arr[:] = ans[:]
         return len(ans)
-
