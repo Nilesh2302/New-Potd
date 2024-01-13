@@ -5,8 +5,8 @@ class Solution(object):
         :rtype: int
         """
         
-        min_p = prices[0]
-        p = 0
+        p=0
+        min_p=prices[0]
         
         for i in range(1,len(prices)):
             if prices[i]<min_p:
@@ -14,7 +14,5 @@ class Solution(object):
             
             else:
                 p = max(p,prices[i]-min_p)
-         
+        
         return p
-          
-    
