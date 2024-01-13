@@ -1,5 +1,5 @@
 class Solution(object):
-    def twoSum(self, nums, target):
+    def twoSum(self, arr, target):
         """
         :type nums: List[int]
         :type target: int
@@ -7,14 +7,13 @@ class Solution(object):
         """
         
         d = {}
-        for i in range(len(nums)):
-            temp = target-nums[i]
-            
+        for i in range(len(arr)):
+            temp = target-arr[i]
             if temp in d:
                 return [d[temp],i]
             
             else:
-                d[nums[i]] = i
-         
-        return []
+                d[arr[i]] = i
+                
+                
         
