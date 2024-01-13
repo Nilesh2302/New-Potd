@@ -10,14 +10,17 @@ class Solution(object):
         
         while m<=h:
             if arr[m]==0:
-                arr[m],arr[l] = arr[l],arr[m]
+                arr[l],arr[m]=arr[m],arr[l]
                 l+=1
                 m+=1
             
             elif arr[m]==1:
+                arr[l],arr[m]=arr[m],arr[l]
                 m+=1
             
             elif arr[m]==2:
-                arr[m],arr[h] = arr[h],arr[m]
+                arr[m],arr[h]=arr[h],arr[m]
                 h-=1
+            
+            
                 
