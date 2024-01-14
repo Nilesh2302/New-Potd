@@ -1,41 +1,40 @@
 class Solution(object):
-    def spiralOrder(self, arr):
+    def spiralOrder(self, mat):
         """
         :type matrix: List[List[int]]
         :rtype: List[int]
         """
         
-        r = len(arr)
-        c = len(arr[0])
+        r = len(mat)
+        c = len(mat[0])
+        ans=[]
+        
         strow = 0
         stcol = 0
         enrow = r-1
         encol = c-1
         
         cnt = 0
-        ans = []
-        
         while cnt<r*c:
-            
             i=stcol
             while i<=encol and cnt<r*c:
-                ans.append(arr[strow][i])
+                ans.append(mat[strow][i])
                 i+=1
                 cnt+=1
             
             strow+=1
             
-            i = strow
+            i=strow
             while i<=enrow and cnt<r*c:
-                ans.append(arr[i][encol])
+                ans.append(mat[i][encol])
                 i+=1
                 cnt+=1
-            
-            
+                
             encol-=1
-            i = encol
+            
+            i=encol
             while i>=stcol and cnt<r*c:
-                ans.append(arr[enrow][i])
+                ans.append(mat[enrow][i])
                 i-=1
                 cnt+=1
             
@@ -43,22 +42,12 @@ class Solution(object):
             
             i = enrow
             while i>=strow and cnt<r*c:
-                ans.append(arr[i][stcol])
+                ans.append(mat[i][stcol])
                 i-=1
                 cnt+=1
             
             stcol+=1
-            
-            
-            
-                
-        
-        
         
         return ans
                 
-            
-        
-            
-            
         
